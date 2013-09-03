@@ -6,7 +6,7 @@
 
 	"loaderConfig": {
 		"paths": {
-			"mediaQuery3ColumnApp": "../dojox/app/tests/mediaQuery3ColumnApp"
+			"mediaQuery3ColumnApp": "../dapp-tests/mediaQuery3ColumnApp"
 		}
 	},
 

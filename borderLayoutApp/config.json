@@ -6,7 +6,7 @@
 
 	"loaderConfig": {
 		"paths": {
-			"layoutApp": "../dojox/app/tests/borderLayoutApp"
+			"layoutApp": "../dapp-tests/borderLayoutApp"
 		}
 	},
 

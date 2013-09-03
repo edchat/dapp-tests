@@ -5,7 +5,7 @@
 
 	"loaderConfig": {
 		"paths": {
-			"customApp": "../dojox/app/tests/customApp"
+			"customApp": "../dapp-tests/customApp"
 		}
 	},
 

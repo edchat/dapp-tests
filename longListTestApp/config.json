@@ -6,7 +6,7 @@
 
 	"loaderConfig": {
 		"paths": {
-			"longListTestApp": "../dojox/app/tests/longListTestApp"
+			"longListTestApp": "../dapp-tests/longListTestApp"
 		}
 	},
 

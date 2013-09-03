@@ -6,7 +6,7 @@
 
 	"loaderConfig": {
 		"paths": {
-			"scrollableTestApp": "../dojox/app/tests/scrollableTestApp2"
+			"scrollableTestApp": "../dapp-tests/scrollableTestApp2"
 		}
 	},
 

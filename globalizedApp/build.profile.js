@@ -14,7 +14,7 @@ var profile = {
 		location: "../../../dijit"
 	},{
 		name: "globalizedApp",
-		location: "../../../dojox/app/tests/globalizedApp",
+		location: "../../../dapp-tests/globalizedApp",
 		destLocation: "./dojox/app/tests/globalizedApp"
 	},{
 		name: "dojox",

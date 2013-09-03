@@ -5,7 +5,7 @@
 
 	"loaderConfig": {
 		"paths": {
-			"globalizedApp": "../dojox/app/tests/globalizedApp"
+			"globalizedApp": "../dapp-tests/globalizedApp"
 		}
 	},
 

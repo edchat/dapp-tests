@@ -6,7 +6,7 @@
 
 	"loaderConfig": {
 		"paths": {
-			"mediaQueryLayoutApp": "../dojox/app/tests/mediaQueryLayoutApp"
+			"mediaQueryLayoutApp": "../dapp-tests/mediaQueryLayoutApp"
 		}
 	},
 
