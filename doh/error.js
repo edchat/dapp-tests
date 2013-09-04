@@ -1,4 +1,4 @@
-define(["doh", "dojox/app/main", "dojox/json/ref", "dojo/text!./error1.json", "dojo/text!./error2.json",
+define(["doh", "dapp/main", "dojox/json/ref", "dojo/text!./error1.json", "dojo/text!./error2.json",
 	"dojo/text!./error3.json", "dojo/text!./error4.json", "dojo/text!./error5.json", "dojo/text!./errorLast.json", "dojo/topic"],
 	function(doh, Application, json, config1, config2, config3, config4, config5, configLast, topic){
 	doh.register("dojox.app.tests.doh.error", [
@@ -21,7 +21,7 @@ define(["doh", "dojox/app/main", "dojox/json/ref", "dojo/text!./error1.json", "d
 			},
 			tearDown: function(){
 				this._topic.remove();
-				// maybe dojox/app should do that?
+				// maybe dapp should do that?
 				delete testApp;
 			}
 		},
@@ -44,7 +44,7 @@ define(["doh", "dojox/app/main", "dojox/json/ref", "dojo/text!./error1.json", "d
 			},
 			tearDown: function(){
 				this._topic.remove();
-				// maybe dojox/app should do that?
+				// maybe dapp should do that?
 				delete testApp;
 			}
 		},
@@ -67,7 +67,7 @@ define(["doh", "dojox/app/main", "dojox/json/ref", "dojo/text!./error1.json", "d
 			},
 			tearDown: function(){
 				this._topic.remove();
-				// maybe dojox/app should do that?
+				// maybe dapp should do that?
 				delete testApp;
 			}
 		},
@@ -90,7 +90,7 @@ define(["doh", "dojox/app/main", "dojox/json/ref", "dojo/text!./error1.json", "d
 			},
 			tearDown: function(){
 				this._topic.remove();
-				// maybe dojox/app should do that?
+				// maybe dapp should do that?
 				delete testApp;
 			}
 		},
@@ -105,7 +105,7 @@ define(["doh", "dojox/app/main", "dojox/json/ref", "dojo/text!./error1.json", "d
 				this._topic = topic.subscribe("/app/status", function(evt){
 					events.push(evt);
 				});
-				require(["dojox/app/main"], function(Application){
+				require(["dapp/main"], function(Application){
 					require.on("error", function(){
 						goterror = true;
 					});
@@ -121,7 +121,7 @@ define(["doh", "dojox/app/main", "dojox/json/ref", "dojo/text!./error1.json", "d
 			},
 			tearDown: function(){
 				this._topic.remove();
-				// maybe dojox/app should do that?
+				// maybe dapp should do that?
 				delete testApp;
 			}
 		},
@@ -140,7 +140,7 @@ define(["doh", "dojox/app/main", "dojox/json/ref", "dojo/text!./error1.json", "d
 					delete require.waiting[p];
 				}
 				require.execQ.length = 0;
-				require(["dojox/app/main"], function(Application){
+				require(["dapp/main"], function(Application){
 					Application(json.fromJson(configLast));
 					// we need to check that before timeout we _never_ entered the START (2) state
 					setTimeout(dohDeferred.getTestCallback(function(){
@@ -155,7 +155,7 @@ define(["doh", "dojox/app/main", "dojox/json/ref", "dojo/text!./error1.json", "d
 					delete require.waiting[p];
 				}
 				require.execQ.length = 0;
-				// maybe dojox/app should do that?
+				// maybe dapp should do that?
 				delete testApp;
 			}
 		}

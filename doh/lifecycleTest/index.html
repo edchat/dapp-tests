@@ -25,10 +25,10 @@
 				"dojox/mobile/TransitionEvent",				
 				"dojo/parser",
 				"dojo/when",
- 				"dojox/app/controllers/Load", 
- 				"dojox/app/controllers/Transition", 
- 				"dojox/app/controllers/Layout",
-  				"dojox/app/controllers/History"
+ 				"dapp/controllers/Load",
+ 				"dapp/controllers/Transition",
+ 				"dapp/controllers/Layout",
+  				"dapp/controllers/History"
 					], function(doh, topic, lang, TransitionEvent, parser, when, Load, Transition, Layout, History) {
 						var events = [];
 						topic.subscribe("/app/status", lang.hitch(this, function(newStatus) {

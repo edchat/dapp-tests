@@ -25,12 +25,12 @@
 				"dojox/mobile/TransitionEvent",				
 				"dojo/parser",
 				"dojo/when",
- 				"dojox/app/controllers/Load", 
- 				"dojox/app/controllers/Transition", 
- 				"dojox/app/controllers/Layout",
-  				"dojox/app/controllers/History",
-  				"dojox/app/controllers/HistoryHash",
-  				"dojox/app/utils/config", 
+ 				"dapp/controllers/Load",
+ 				"dapp/controllers/Transition",
+ 				"dapp/controllers/Layout",
+  				"dapp/controllers/History",
+  				"dapp/controllers/HistoryHash",
+  				"dapp/utils/config",
 				"dojox/json/ref", 
 				"dojo/sniff",
 				"dojo/text!./config.json"  				
@@ -55,7 +55,7 @@
 							runTest : function(t) {
 								var dfd = new doh.Deferred();
 								setTimeout(function() {
-									t.assertEqual(config.controllers[0], "dojox/app/controllers/Load");
+									t.assertEqual(config.controllers[0], "dapp/controllers/Load");
 									t.assertEqual(config.configTestSetTrueInHas, "SetInHasOk");
 									t.assertEqual(config.configTestNotSetInHas, "InitOk");
 									if(config.isTablet){
@@ -78,10 +78,10 @@
 									// test controllers
 									t.assertEqual(4, config.controllers.length);
 									if(has("ie")){
-										t.assertEqual(config.controllers[3], "dojox/app/controllers/HistoryHash");										
+										t.assertEqual(config.controllers[3], "dapp/controllers/HistoryHash");
 										t.assertTrue(testApp.controllers[3] instanceof HistoryHash);
 									}else{
-										t.assertEqual(config.controllers[3], "dojox/app/controllers/History");										
+										t.assertEqual(config.controllers[3], "dapp/controllers/History");
 										t.assertTrue(testApp.controllers[3] instanceof History);
 									}
 									return dfd.callback(true);

@@ -1,13 +1,13 @@
-define(["dojo/_base/lang","dojo/_base/declare", "dojo/Deferred", "dojo/_base/array", "dojo/dom-construct", "dijit/registry", "dojox/app/Controller"],
+define(["dojo/_base/lang","dojo/_base/declare", "dojo/Deferred", "dojo/_base/array", "dojo/dom-construct", "dijit/registry", "dapp/Controller"],
 	function(lang, declare, Deferred, array, domConstruct, registry, Controller){
 	// module:
-	//		dojox/app/tests/layoutApp2/controllers/UnloadViewController
+	//		dapp-tests/layoutApp2/controllers/UnloadViewController
 	// summary:
 	//		Used to Unload Views when they are no longer needed
-	//		Bind "unload-view" event on dojox/app application instance.
+	//		Bind "unload-view" event on dapp application instance.
 	//		Do transition from one view to another view.
 
-	return declare("dojox/app/tests/layoutApp2/controllers/UnloadViewController", Controller, {
+	return declare("dapp-tests/layoutApp2/controllers/UnloadViewController", Controller, {
 
 		constructor: function(app){
 			this.app = app;
@@ -15,7 +15,7 @@ define(["dojo/_base/lang","dojo/_base/declare", "dojo/Deferred", "dojo/_base/arr
 			//		bind "app-transition" event on application instance.
 			//
 			// app:
-			//		dojox/app application instance.
+			//		dapp application instance.
 			// events:
 			//		{event : handler}
 			this.events = {
@@ -25,7 +25,7 @@ define(["dojo/_base/lang","dojo/_base/declare", "dojo/Deferred", "dojo/_base/arr
 
 		unloadView: function(event){
 			// summary:
-			//		Response to dojox/app "unload-view" event.
+			//		Response to dapp "unload-view" event.
 			// 		If a view has children loaded the view and any children of the child will be unloaded.
 			//
 			// example:

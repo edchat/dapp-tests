@@ -6,7 +6,7 @@
 
 	"dependencies": [
 		"dojox/mobile/_base",
-		"dojox/app/widgets/Container",
+		"dapp/widgets/Container",
 		"dojox/mobile/compat",
 		"dojox/mobile/TabBar",
 		"dojox/mobile/RoundRect",
@@ -19,10 +19,10 @@
 		"dojo/store/Memory",
 		"dojo/data/ItemFileWriteStore",
 	 	"dojo/store/DataStore",
-		"dojox/app/utils/simpleModel",
-		"dojox/app/utils/mvcModel",
-		"dojox/mvc/EditStoreRefListController",
-		"dojox/mvc/EditModelRefController",
+	//	"dapp/utils/simpleModel",
+	//	"dapp/utils/mvcModel",
+	//	"dojox/mvc/EditStoreRefListController",
+	//	"dojox/mvc/EditModelRefController",
 		"dojox/mobile/deviceTheme"
 	],
 	// Modules for the application.  The are basically used as the second
@@ -34,9 +34,9 @@
 	// Array of AMD modules identifiers. Controllers for the application. All the controllers defined here will be 
 	// loaded during application startup to respond to application events and controller the application logic. 
 	"controllers": [
-		"dojox/app/controllers/Load",
-		"dojox/app/controllers/Transition",
-		"dojox/app/controllers/Layout"
+		"dapp/controllers/Load",
+		"dapp/controllers/Transition",
+		"dapp/controllers/Layout"
 	],	
 
 	//stores we are using 
@@ -85,21 +85,21 @@
 	//one to override the class that will be used for the model.  By default it is dojox/mvc/mvcModel
 	"models": {
 		"namesXUnused": {
-					"modelLoader": "dojox/app/utils/mvcModel",
+					"modelLoader": "dapp/utils/mvcModel",
 					"type": "dojox/mvc/EditStoreRefListController",
 					"params":{
 						"store": {"$ref":"#stores.namesStore"}
 					}
 		},
 		"repeatmodels3": {
-					"modelLoader": "dojox/app/utils/mvcModel",
+					"modelLoader": "dapp/utils/mvcModel",
 					"type": "dojox/mvc/EditStoreRefListController",
 					"params":{
 						"datastore": {"$ref":"#stores.repeatItemStore"}
 					}
 		},
 		"jsonRestModel": {
-					"modelLoader": "dojox/app/utils/mvcModel",
+					"modelLoader": "dapp/utils/mvcModel",
 					"type": "dojox/mvc/EditStoreRefListController",
 					"params":{
 						"store": {"$ref":"#stores.jsonStore"},
@@ -113,12 +113,12 @@
 	"has" : {
 		"ie9orLess" : {
 			"controllers": [
-				"dojox/app/controllers/HistoryHash"
+				"dapp/controllers/HistoryHash"
 			]
 		},
 		"!ie9orLess" : {
 			"controllers": [
-				"dojox/app/controllers/History"
+				"dapp/controllers/History"
 			]
 		}
 	},	
@@ -138,7 +138,7 @@
 		"simple":{
 			"models": {
 				"names": {
-					"modelLoader": "dojox/app/utils/mvcModel",
+					"modelLoader": "dapp/utils/mvcModel",
 					"type": "dojox/mvc/ModelRefController",
 					"params":{
 						"data": "modelApp.names"
@@ -153,14 +153,14 @@
 		"simple2":{
 			"models": {
 				"names": {
-					"modelLoader": "dojox/app/utils/mvcModel",
+					"modelLoader": "dapp/utils/mvcModel",
 					"type": "dojox/mvc/EditModelRefController",
 					"params":{
 						"data": "modelApp.names"
 					}
 				},
 				"repeatmodelsXUnused": {
-					"modelLoader": "dojox/app/utils/mvcModel",
+					"modelLoader": "dapp/utils/mvcModel",
 					"type": "dojox/mvc/EditStoreRefListController",
 					"params":{
 						"datastore": {"$ref":"#stores.repeatItemStore"}
@@ -175,28 +175,28 @@
 		"simple3":{
 			"models": {
 				"names3": {
-					"modelLoader": "dojox/app/utils/simpleModel",
+					"modelLoader": "dapp/utils/simpleModel",
 					"params":{
 						"store": {"$ref":"#stores.namesStore"}
 
 					}
 				},
 				"names3JsonStoreUnused": {
-					"modelLoader": "dojox/app/utils/simpleModel",
+					"modelLoader": "dapp/utils/simpleModel",
 					"params":{
 						"store": {"$ref":"#stores.jsonNameStore"},
 						"query": {"id": "1"}
 					}
 				},
 				"names3dataStoreUnused": {
-					"modelLoader": "dojox/app/utils/simpleModel",
+					"modelLoader": "dapp/utils/simpleModel",
 					"params":{
 						"datastore": {"$ref":"#stores.nameItemStore"}
 
 					}
 				},
 				"namesXUnused": {
-					"modelLoader": "dojox/app/utils/simpleModel",
+					"modelLoader": "dapp/utils/simpleModel",
 					"params":{
 						"store": {"$ref":"#stores.namesStore"}
 					}
@@ -210,14 +210,14 @@
 		"repeat": {
 			"models": {
 				"repeatmodels": {
-					"modelLoader": "dojox/app/utils/mvcModel",
+					"modelLoader": "dapp/utils/mvcModel",
 					"type": "dojox/mvc/EditStoreRefListController",
 					"params":{
 						"store": {"$ref":"#stores.repeatStore"}
 					}
 				},
 				"repeatmodelsXUnused": {
-					"modelLoader": "dojox/app/utils/mvcModel",
+					"modelLoader": "dapp/utils/mvcModel",
 					"type": "dojox/mvc/EditStoreRefListController",
 					"params":{
 						"datastore": {"$ref":"#stores.repeatItemStore"}
@@ -232,7 +232,7 @@
 		"repeat2": {
 			"models": {
 				"repeatmodels2": {
-					"modelLoader": "dojox/app/utils/mvcModel",
+					"modelLoader": "dapp/utils/mvcModel",
 					"type": "dojox/mvc/EditStoreRefListController",
 					"params":{
 						"datastore": {"$ref":"#stores.repeatItemStore"},

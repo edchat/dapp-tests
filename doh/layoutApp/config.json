@@ -11,7 +11,7 @@
 	},
 
 	"dependencies": [
-		"dojox/app/utils/simpleModel",
+	//	"dapp/utils/simpleModel",
 		"dojox/mobile/_base",
 		"dojox/mobile/compat",
 		"dojox/mobile/TabBar",
@@ -24,15 +24,15 @@
 		"dojo/store/Observable",		
 		"dojox/mobile/EdgeToEdgeStoreList",
 		"dojox/mobile/View",
-		"dojox/app/widgets/Container"
+		"dapp/widgets/Container"
 	],
 
 	"modules": [],
 	
 	"controllers": [
-		"dojox/app/controllers/Load",
-		"dojox/app/controllers/Transition",
-		"dojox/app/controllers/Layout"
+		"dapp/controllers/Load",
+		"dapp/controllers/Transition",
+		"dapp/controllers/Layout"
 	],
 	
 	//stores we are using
@@ -56,7 +56,7 @@
 	//one to override the class that will be used for the model.
 	"models": {
 	   "names": {
-			"modelLoader": "dojox/app/utils/simpleModel",
+		//	"modelLoader": "dapp/utils/simpleModel",
 			"params":{
 				"store": {"$ref":"#stores.namesStore"}
 			}
@@ -68,12 +68,12 @@
 	"has" : {
 		"ie9orLess" : {
 			"controllers": [
-				"dojox/app/controllers/HistoryHash"
+				"dapp/controllers/HistoryHash"
 			]
 		},
 		"!ie9orLess" : {
 			"controllers": [
-				"dojox/app/controllers/History"
+				"dapp/controllers/History"
 			]
 		}
 	},	

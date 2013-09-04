@@ -32,7 +32,7 @@
 	//	dojo.require("dijit.dijit"); // optimize: load dijit layer
 	//	dojo.require("dijit/layout/BorderContainer");
 	//	dojo.require("dijit/layout/ContentPane");
-	//	dojo.require("dojox/app/widgets/Container");
+	//	dojo.require("dapp/widgets/Container");
 	//	dojo.require("dijit/form/FilteringSelect");
 		var bc, cp1, cp2, cp3, stack, cp2b, cp2c;
 		require([
@@ -42,7 +42,7 @@
 			'dijit/layout/StackContainer',
 			'dijit/layout/StackController',
 			'dijit/layout/ContentPane', 
-			'dojox/app/widgets/Container',
+			'dapp/widgets/Container',
 			'dijit/form/Button',
 			'dijit/form/FilteringSelect'
 			], function(parser, ready, BorderContainer, StackContainer, StackController, ContentPane){
@@ -92,13 +92,13 @@
 	<button id="selectStack2" onclick="stack.selectChild(cp2c);">Select Stack 2</button>
 
 	<div id="main" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props='design:"sidebar" '>
-		<div data-dojo-type="dojox/app/widgets/Container" data-dojo-props='id:"main-leading", region:"left", style:"background-color: #acb386; width: 100px; height: 500px"'>
+		<div data-dojo-type="dapp/widgets/Container" data-dojo-props='id:"main-leading", region:"left", style:"background-color: #acb386; width: 100px; height: 500px"'>
 			leading
 		</div>
-		<div data-dojo-type="dojox/app/widgets/Container" data-dojo-props='id:"main-top", region:"top", style:"background-color: #b39b86; height: 100px;"'>
+		<div data-dojo-type="dapp/widgets/Container" data-dojo-props='id:"main-top", region:"top", style:"background-color: #b39b86; height: 100px;"'>
 			top bar
 		</div>
-		<div data-dojo-type="dojox/app/widgets/Container" data-dojo-props='id:"main-center", region:"center", style:"background-color: #f5ffbf; padding: 10px;"'>
+		<div data-dojo-type="dapp/widgets/Container" data-dojo-props='id:"main-center", region:"center", style:"background-color: #f5ffbf; padding: 10px;"'>
 			main panel with <a href="http://www.dojotoolkit.org/">a link</a>.<br />
 			(to check we're copying children around properly).<br />
 			<select aria-label="select" data-dojo-type="dijit/form/FilteringSelect">
@@ -108,10 +108,10 @@
 			</select>
 			Here's some text that comes AFTER the combo box.
 		</div>
-		<div data-dojo-type="dojox/app/widgets/Container" data-dojo-props='id:"main-bottom", region:"bottom", style:"background-color: #b39b86; height: 100px;", splitter:true'>
+		<div data-dojo-type="dapp/widgets/Container" data-dojo-props='id:"main-bottom", region:"bottom", style:"background-color: #b39b86; height: 100px;", splitter:true'>
 			bottom bar
 		</div>
-		<div data-dojo-type="dojox/app/widgets/Container" data-dojo-props='id:"main-trailing", region:"trailing", style:"background-color: #acb386; width: 100px;", splitter:true'>
+		<div data-dojo-type="dapp/widgets/Container" data-dojo-props='id:"main-trailing", region:"trailing", style:"background-color: #acb386; width: 100px;", splitter:true'>
 			trailing
 		</div>
 	</div>

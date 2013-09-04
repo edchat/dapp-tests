@@ -1,4 +1,4 @@
-require(["dojo/_base/window","dojox/app/main", "dojox/json/ref", "dojo/text!./config.json", "dojo/sniff"],
+require(["dojo/_base/window","dapp/main", "dojox/json/ref", "dojo/text!./config.json", "dojo/sniff"],
 function(win, Application, jsonRef, config, has){
 	win.global.modelApp = {};
 	modelApp.listData = { 
@@ -40,7 +40,7 @@ function(win, Application, jsonRef, config, has){
 	};
 	var cfg = jsonRef.fromJson(config);
 	has.add("ie9orLess", has("ie") && (has("ie") <= 9));	
-	cfg.controllers[2] = "dojox/app/controllers/Layout";		
+	cfg.controllers[2] = "dapp/controllers/Layout";
 	console.log("cfg.controllers[2] was set to Layout to force it to use Layout="+cfg.controllers[2]);	
 	Application(cfg);
 	

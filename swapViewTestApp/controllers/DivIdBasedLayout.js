@@ -1,19 +1,19 @@
 define(["dojo/_base/declare", "dojo/dom", "dojo/dom-style",
 		"dojo/dom-class", "dojo/dom-attr", "dojo/dom-construct", 
-		"dojox/app/controllers/LayoutBase"],
+		"dapp/controllers/LayoutBase"],
 function(declare, dom, domStyle, domClass, domAttr, domConstruct, LayoutBase){
 	// module:
-	//		dojox/app/tests/swapViewTestApp/controllers/DivIdBasedLayout
+	//		dapp/tests/swapViewTestApp/controllers/DivIdBasedLayout
 	// summary:
 	//		Will layout an application based upon div ids.  
 	//		Each view will be appended inside the div with the id that matches the value set in the constraints for the view.
 	//		
 
-	return declare("dojox/app/tests/swapViewTestApp/controllers/DivIdBasedLayout", LayoutBase, {
+	return declare("dapp/tests/swapViewTestApp/controllers/DivIdBasedLayout", LayoutBase, {
 
 		initLayout: function(event){
 			// summary:
-			//		Response to dojox/app "app-initLayout" event which is setup in LayoutBase.
+			//		Response to dapp "app-initLayout" event which is setup in LayoutBase.
 			//		The initLayout event is called once when the View is being created the first time.
 			//
 			// example:

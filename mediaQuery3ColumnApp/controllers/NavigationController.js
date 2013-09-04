@@ -1,13 +1,13 @@
 define(["dojo/_base/lang","dojo/_base/declare", "dojo/dom", "dojo/dom-style", "dojo/sniff", "dojo/_base/window", "dojo/_base/config",
-		"dojo/dom-class", "dojo/dom-attr", "dojo/dom-construct", "dojox/app/Controller"],
+		"dojo/dom-class", "dojo/dom-attr", "dojo/dom-construct", "dapp/Controller"],
 function(lang, declare, dom, domStyle, has, win, config, domClass, domAttr, domConstruct, Controller){
 	// module:
-	//		dojox/app/tests/mediaQuery3ColumnApp/controllers/NavigationController
+	//		dapp-tests/mediaQuery3ColumnApp/controllers/NavigationController
 	// summary:
 	//		Used to handle Navigation for the application 
 	//		
 
-	return declare("dojox/app/tests/mediaQuery3ColumnApp/controllers/NavigationController", Controller, {
+	return declare("dapp-tests/mediaQuery3ColumnApp/controllers/NavigationController", Controller, {
 
 		constructor: function(app){
 			this.app = app;

@@ -11,7 +11,7 @@
 	],
 	
 	"controllers": [
-		"dojox/app/controllers/History"
+		"dapp/controllers/History"
 	],
 
 	"defaultView": "home",
@@ -21,7 +21,7 @@
 	"views": {
 
 		"home": { 
-			"template": "dojox/app/tests/doh/doesnotexist.html"
+			"template": "dapp-tests/doh/doesnotexist.html"
 		}
 
 	}

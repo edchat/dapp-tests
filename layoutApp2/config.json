@@ -11,7 +11,7 @@
 	},
 
 	"dependencies": [
-		"dojox/app/utils/simpleModel",
+	//	"dapp/utils/simpleModel",
 		"dojox/mobile/_base",
 		"dojox/mobile/compat",
 		"dojox/mobile/TabBar",
@@ -24,16 +24,16 @@
 		"dojo/store/Observable",		
 		"dojox/mobile/EdgeToEdgeStoreList",
 		"dojox/mobile/View",
-		"dojox/app/widgets/Container"
+		"dapp/widgets/Container"
 	],
 
 	"modules": [],
 	
 	"controllers": [
-		"dojox/app/controllers/Load",
-		"dojox/app/controllers/Transition",
-		"dojox/app/controllers/Layout",
-		"dojox/app/tests/layoutApp2/controllers/UnloadViewController"
+		"dapp/controllers/Load",
+		"dapp/controllers/Transition",
+		"dapp/controllers/Layout",
+		"dapp-tests/layoutApp2/controllers/UnloadViewController"
 	],
 
 	//stores we are using
@@ -53,28 +53,17 @@
        }
 	},
 
-	//models and instantiation parameters for the models. Including 'type' as a property allows
-	//one to override the class that will be used for the model.
-	"models": {
-	   "names": {
-			"modelLoader": "dojox/app/utils/simpleModel",
-			"params":{
-				"store": {"$ref":"#stores.namesStore"}
-			}
-	   }
-	}, 
-	
 	// The has section will include the sections for which the has checks are true.  
 	// For the sections with ! it will include the section if the has check is not true.
 	"has" : {
 		"ie9orLess" : {
 			"controllers": [
-				"dojox/app/controllers/HistoryHash"
+				"dapp/controllers/HistoryHash"
 			]
 		},
 		"!ie9orLess" : {
 			"controllers": [
-				"dojox/app/controllers/History"
+				"dapp/controllers/History"
 			]
 		}
 	},	

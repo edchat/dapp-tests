@@ -1,4 +1,4 @@
-require(["dojox/app/main", "dojox/json/ref", "dojo/sniff"],
+require(["dapp/main", "dojox/json/ref", "dojo/sniff"],
 	function(Application, json, has){
 
 	var configurationFile = "./config.json";

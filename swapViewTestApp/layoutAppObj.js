@@ -1,4 +1,4 @@
-require(["dojo/_base/window","dojox/app/main", "dojox/json/ref", "dojo/text!./objConfig.json", "dojo/sniff"],
+require(["dojo/_base/window","dapp/main", "dojox/json/ref", "dojo/text!./objConfig.json", "dojo/sniff"],
 	function(win, Application, jsonRef, config, has){
 	win.global.modelApp = {};
 	modelApp.names = {

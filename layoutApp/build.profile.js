@@ -1,4 +1,4 @@
-require(["dojox/app/build/buildControlApp"], function(bc){
+require(["dapp/build/buildControlApp"], function(bc){
 });
 
 var profile = {
@@ -16,7 +16,7 @@ var profile = {
 	},{
 		name: "layoutApp",
 		location: "../../../dapp-tests/layoutApp",
-		destLocation: "./dojox/app/tests/layoutApp"
+		destLocation: "./dapp/tests/layoutApp"
 	},{
 		name: "dojox",
 		location: "../../../dojox"

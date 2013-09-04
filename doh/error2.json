@@ -11,7 +11,7 @@
 	],
 	
 	"controllers": [
-		"dojox/app/controllers/History"
+		"dapp/controllers/History"
 	],
 
 	"defaultView": "home",
@@ -21,8 +21,8 @@
 	"views": {
 
 		"home": { 
-			"controller" : "dojox/app/tests/doh/errorDef2",
-			"template": "dojox/app/tests/doh/config.html"
+			"controller" : "dapp-tests/doh/errorDef2",
+			"template": "dapp-tests/doh/config.html"
 		}
 
 	}

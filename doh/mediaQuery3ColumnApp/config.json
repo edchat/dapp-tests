@@ -24,16 +24,16 @@
 		"dojox/mobile/ScrollableView",
 		"dojo/store/Memory",
 		"dojox/mobile/View",
-		"dojox/app/widgets/Container"
+		"dapp/widgets/Container"
 	],
 
 	"modules": [],
 	
 	"controllers": [
-		"dojox/app/controllers/Load",
-		"dojox/app/controllers/Transition",
-		"dojox/app/tests/mediaQuery3ColumnApp/controllers/CssLayout",
-		"dojox/app/tests/mediaQuery3ColumnApp/controllers/NavigationController"
+		"dapp/controllers/Load",
+		"dapp/controllers/Transition",
+		"dapp-tests/mediaQuery3ColumnApp/controllers/CssLayout",
+		"dapp-tests/mediaQuery3ColumnApp/controllers/NavigationController"
 	],
 
 	// The has section will include the sections for which the has checks are true.  
@@ -41,12 +41,12 @@
 	"has" : {
 		"ie9orLess" : {
 			"controllers": [
-				"dojox/app/controllers/HistoryHash"
+				"dapp/controllers/HistoryHash"
 			]
 		},
 		"!ie9orLess" : {
 			"controllers": [
-				"dojox/app/controllers/History"
+				"dapp/controllers/History"
 			]
 		},
 		"isInitiallySmall" : {

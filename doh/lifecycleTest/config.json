@@ -11,10 +11,10 @@
 	],
 	
 	"controllers": [
-		"dojox/app/controllers/Load",
-		"dojox/app/controllers/Transition",
-		"dojox/app/controllers/Layout",
-		"dojox/app/controllers/History"
+		"dapp/controllers/Load",
+		"dapp/controllers/Transition",
+		"dapp/controllers/Layout",
+		"dapp/controllers/History"
 	],
 
 	"defaultView": "home",
@@ -24,7 +24,7 @@
 	"views": {
 
 		"home": { 
-			"template": "dojox/app/tests/doh/config.html"
+			"template": "dapp-tests/doh/config.html"
 		}
 
 	}

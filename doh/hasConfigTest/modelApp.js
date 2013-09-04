@@ -1,4 +1,4 @@
-require(["dojo/_base/window","dojox/app/main", "dojox/json/ref", "dojo/text!./config.json", "dojox/app/utils/config", "dojo/sniff"],
+require(["dojo/_base/window","dapp/main", "dojox/json/ref", "dojo/text!./config.json", "dapp/utils/config", "dojo/sniff"],
 function(win, Application, jsonRef, config, configUtil, has){
 	var originalConfig = jsonRef.fromJson(config);
 	var isTablet = false;

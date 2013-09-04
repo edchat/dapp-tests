@@ -23,19 +23,18 @@
 		"dojo/store/Memory",
 		"dojox/mobile/View",
 		"dojox/mobile/EdgeToEdgeStoreList",
-		"dojox/app/utils/simpleModel",
-		"dojo/store/Observable",		
+		"dojo/store/Observable",
 		"dojox/mobile/DatePicker",
 		"dojox/mobile/Opener",
-		"dojox/app/widgets/Container"
+		"dapp/widgets/Container"
 	],
 
 	"modules": [],
 	
 	"controllers": [
-		"dojox/app/controllers/Load",
-		"dojox/app/controllers/Transition",
-		"dojox/app/tests/mediaQueryLayoutApp/controllers/CssLayout"
+		"dapp/controllers/Load",
+		"dapp/controllers/Transition",
+		"dapp-tests/mediaQueryLayoutApp/controllers/CssLayout"
 	],
 
 	//stores we are using
@@ -60,12 +59,12 @@
 	"has" : {
 		"ie9orLess" : {
 			"controllers": [
-				"dojox/app/controllers/HistoryHash"
+				"dapp/controllers/HistoryHash"
 			]
 		},
 		"!ie9orLess" : {
 			"controllers": [
-				"dojox/app/controllers/History"
+				"dapp/controllers/History"
 			]
 		}
 	},	
@@ -102,14 +101,6 @@
 			"template": "mediaQueryLayoutApp/views/header.html"
 		},
 		"simple":{
-            "models": {
-				"names": {
-					"modelLoader": "dojox/app/utils/simpleModel",
-					"params":{
-						"store": {"$ref":"#stores.namesStore"}
-					}
-				}
-			},
 			"controller" : "mediaQueryLayoutApp/views/simple/simple.js",
 			"constraint" : "center",
 			"template": "mediaQueryLayoutApp/views/simple/simple.html",

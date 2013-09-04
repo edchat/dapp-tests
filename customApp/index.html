@@ -20,7 +20,7 @@
 		<script type="text/javascript" src="../../dojox/mobile/deviceTheme.js"></script>
 		<script type="text/javascript" data-dojo-config="parseOnLoad: false, async: false" src="../../dojo/dojo.js"></script>
 		<script>
-			require(["dojox/app/main", "dojox/json/ref", "dojo/text!./config.json"],
+			require(["dapp/main", "dojox/json/ref", "dojo/text!./config.json"],
 			function(Application, jsonRef, config){
 				var cfg = jsonRef.fromJson(config);
 				Application(cfg);

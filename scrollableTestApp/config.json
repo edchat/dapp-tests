@@ -12,7 +12,7 @@
 		}
 	},
 
-	// Array of AMD modules identifiers. When defined at the top level dependencies of the dojox/app application. 
+	// Array of AMD modules identifiers. When defined at the top level dependencies of the dapp application.
 	// When defined at view level, dependencies for the view.
 	"dependencies": [
 		"dojox/mobile/_base",
@@ -25,11 +25,11 @@
 		"dojox/mobile/ListItem",
 		"dojox/mobile/RoundRectList",
 		"dojox/mobile/RoundRectCategory",
-		"dojox/app/widgets/Container",
+		"dapp/widgets/Container",
 		"dojox/mobile/Container",
 		"dojo/data/ItemFileWriteStore",
 		"dojo/store/DataStore",
-		"dojox/app/utils/mvcModel",
+		"dapp/utils/mvcModel",
 		"dojox/mvc/EditStoreRefListController",
 		"dojox/mvc/Repeat",
 		"dojox/mvc/WidgetList",
@@ -51,12 +51,12 @@
 	// Array of AMD modules identifiers. Controllers for the application. All the controllers defined here will be 
 	// loaded during application startup to respond to application events and controller the application logic. 
 	"controllers": [
-		"dojox/app/controllers/Load",
-		"dojox/app/controllers/Transition",
-		"dojox/app/controllers/Layout"
+		"dapp/controllers/Load",
+		"dapp/controllers/Transition",
+		"dapp/controllers/Layout"
 	],
 
-	// Dojo stores which are used by dojox/app to setup data models. A store item is an object with a
+	// Dojo stores which are used by dapp to setup data models. A store item is an object with a
 	// a type and a params property. The type property is the AMD module identifier for the store class to be
 	// instantiated. The content of the params property is passed to the store class constructor to build an 
 	// instance. 
@@ -75,14 +75,14 @@
 	// an AMD module identifier and finally the params property content is passed to the model class 
 	// constructor to build an instance.
 	"models": {
-       "repeatmodels": {
-       					"modelLoader": "dojox/app/utils/mvcModel",
-					"type": "dojox/mvc/EditStoreRefListController",
-					"params":{
-						"datastore": {"$ref":"#stores.repeatStore"}
-					}
-        }
-	},
+   //    "repeatmodels": {
+   //    					"modelLoader": "dapp/utils/mvcModel",
+	//				"type": "dojox/mvc/EditStoreRefListController",
+	//				"params":{
+	//					"datastore": {"$ref":"#stores.repeatStore"}
+	//				}
+    //    }
+	//},
 	
 	// The has section will include the sections for which the has checks are true.  
 	// For the sections with ! it will include the section if the has check is not true.
@@ -99,12 +99,12 @@
 		},
 		"ie9orLess" : {
 			"controllers": [
-				"dojox/app/controllers/HistoryHash"
+				"dapp/controllers/HistoryHash"
 			]
 		},
 		"!ie9orLess" : {
 			"controllers": [
-				"dojox/app/controllers/History"
+				"dapp/controllers/History"
 			]
 		}
 	},	

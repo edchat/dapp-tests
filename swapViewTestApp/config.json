@@ -11,7 +11,7 @@
 	},
 
 	"dependencies": [
-		"dojox/app/utils/mvcModel",
+		"dapp/utils/mvcModel",
 		"dojox/mobile/_base",
 		
 		"dojox/mobile/FixedSplitter",
@@ -34,15 +34,15 @@
         "dojox/mvc/Repeat",
         "dojox/mvc/Output",
 		"dojox/mobile/View",
-		"dojox/app/widgets/Container"
+		"dapp/widgets/Container"
 	],
 
 	"modules": [],
 	
 	"controllers": [
-		"dojox/app/controllers/Load",
-		"dojox/app/controllers/Transition",
-		"dojox/app/tests/swapViewTestApp/controllers/DivIdBasedLayout"
+		"dapp/controllers/Load",
+		"dapp/controllers/Transition",
+		"dapp/tests/swapViewTestApp/controllers/DivIdBasedLayout"
 	],
 
 	//stores we are using
@@ -65,14 +65,14 @@
 	//one to overide the class that will be used for the model.  By default it is dojox/mvc/model
 	"models": {
 	   "names": {
-			"modelLoader": "dojox/app/utils/mvcModel",
+			"modelLoader": "dapp/utils/mvcModel",
 			"type": "dojox/mvc/EditStoreRefListController",
 			"params":{
 				"store": {"$ref":"#stores.namesStore"}
 			}	       
 	   },
 		"repeatmodels": {
-			"modelLoader": "dojox/app/utils/mvcModel",
+			"modelLoader": "dapp/utils/mvcModel",
 			"type": "dojox/mvc/EditStoreRefListController",
 			"params":{
 				"store": {"$ref":"#stores.repeatStore"}
@@ -85,12 +85,12 @@
 	"has" : {
 		"ie9orLess" : {
 			"controllers": [
-				"dojox/app/controllers/HistoryHash"
+				"dapp/controllers/HistoryHash"
 			]
 		},
 		"!ie9orLess" : {
 			"controllers": [
-				"dojox/app/controllers/History"
+				"dapp/controllers/History"
 			]
 		}
 	},	

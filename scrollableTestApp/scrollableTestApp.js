@@ -10,30 +10,30 @@ define(["dojox/mobile/ProgressIndicator", "dojox/mobile/TransitionEvent", "dojox
 	 	
 	 	// show an item detail
 		this.setDetailsContext = function(index){
-			if(this.loadedModels.repeatmodels) {
-				this.loadedModels.repeatmodels.set("cursorIndex", index);
-			}		
+		//	if(this.loadedModels.repeatmodels) {
+		//		this.loadedModels.repeatmodels.set("cursorIndex", index);
+		//	}
 		};
 
 		// global for call from template
 		this.removeScrollableItem = function(index){
-				this.loadedModels.repeatmodels.model.splice(index, 1);
-				return false; 	 		
+		//		this.loadedModels.repeatmodels.model.splice(index, 1);
+		//		return false;
 		};
 
 		// insert an item
 		this.insertResult = function(index, e){
-			var repeatmodel = this.loadedModels.repeatmodels;
-			if(index<0 || index>repeatmodel.model.length){
-				throw Error("index out of data model.");
-			}
-			if((repeatmodel.model[index].First=="") ||
-				(repeatmodel.model[index+1] && (repeatmodel.model[index+1].First == ""))){
-				return;
-			}
+		//	var repeatmodel = this.loadedModels.repeatmodels;
+		//	if(index<0 || index>repeatmodel.model.length){
+		//		throw Error("index out of data model.");
+		//	}
+		//	if((repeatmodel.model[index].First=="") ||
+		//		(repeatmodel.model[index+1] && (repeatmodel.model[index+1].First == ""))){
+		//		return;
+		//	}
 			var data = {id:Math.random(), "First": "", "Last": "", "Location": "CA", "Office": "", "Email": "", "Tel": "", "Fax": ""};
-			repeatmodel.model.splice(index+1, 0, new getStateful(data));
-			this.setDetailsContext(index+1);
+		//	repeatmodel.model.splice(index+1, 0, new getStateful(data));
+		//	this.setDetailsContext(index+1);
 			var transOpts = {
 				title : "repeatDetails",
 				target : "repeatDetails",

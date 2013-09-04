@@ -1,4 +1,4 @@
-define(["dojo/_base/lang", "dojo/dom", "dojo/on", "dijit/registry", "dojo/date/stamp", "dojox/app/utils/constraints", "dojox/mobile/TransitionEvent"], 
+define(["dojo/_base/lang", "dojo/dom", "dojo/on", "dijit/registry", "dojo/date/stamp", "dapp/utils/constraints", "dojox/mobile/TransitionEvent"],
 function(lang, dom, on, registry, stamp, constraints, TransitionEvent){
 	var _onResults = []; // events on array
 

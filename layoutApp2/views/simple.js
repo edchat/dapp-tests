@@ -21,7 +21,8 @@ function(dom, connect, registry){
 	return {
 		// view init
 		init: function(){
-			currentModel = this.loadedModels.names;
+		//	currentModel = this.loadedModels.names;
+			currentModel = this.loadedStores.namesStore.data;
 			var connectResult;
 
 			connectResult = connect.connect(dom.byId('shipto'), "click", function(){

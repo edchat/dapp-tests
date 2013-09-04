@@ -26,16 +26,16 @@
 		"dojo/store/Observable",		
 		"dijit/layout/BorderContainer",
 		"dojox/mobile/View",
-		"dojox/app/widgets/Container"
+		"dapp/widgets/Container"
 	],
 
 	"modules": [],
 
 	"controllers": [
-		"dojox/app/controllers/Load",
-		"dojox/app/controllers/Transition",
-		"dojox/app/controllers/BorderLayout"   
-	//	"dojox/app/controllers/Layout"         // this test can work with either Layout or BorderLayout
+		"dapp/controllers/Load",
+		"dapp/controllers/Transition",
+		"dapp/controllers/BorderLayout"
+	//	"dapp/controllers/Layout"         // this test can work with either Layout or BorderLayout
 	],
 
 	"borderLayoutNoSplitter": false,  // set true to turn off the splitter on the StackContainer.
@@ -70,12 +70,12 @@
 	"has" : {
 		"ie9orLess" : {
 			"controllers": [
-				"dojox/app/controllers/HistoryHash"
+				"dapp/controllers/HistoryHash"
 			]
 		},
 		"!ie9orLess" : {
 			"controllers": [
-				"dojox/app/controllers/History"
+				"dapp/controllers/History"
 			]
 		}
 	},	

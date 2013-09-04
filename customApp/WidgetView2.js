@@ -1,4 +1,4 @@
-define(["dojo/_base/declare", "dojox/app/ViewBase", "dijit/form/Button"],
+define(["dojo/_base/declare", "dapp/ViewBase", "dijit/form/Button"],
 	function(declare, ViewBase, Button){
 		return declare([Button, ViewBase], {
 			postscript: function(){

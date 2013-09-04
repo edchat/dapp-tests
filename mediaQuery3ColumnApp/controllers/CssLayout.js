@@ -1,29 +1,29 @@
 define(["dojo/_base/declare", "dojo/dom", "dojo/dom-style",
 		"dojo/dom-class", "dojo/dom-attr", "dojo/dom-construct", 
-		"dojox/app/controllers/LayoutBase"],
+		"dapp/controllers/LayoutBase"],
 function(declare, dom, domStyle, domClass, domAttr, domConstruct, LayoutBase){
 	// module:
-	//		dojox/app/tests/mediaQuery3ColumnApp/controllers/CssLayout
+	//		dapp-tests/mediaQuery3ColumnApp/controllers/CssLayout
 	// summary:
 	//		Will layout an application with a BorderContainer.  
 	//		Each view to be shown in a region of the BorderContainer will be wrapped in a StackContainer and a ContentPane.
 	//		
 
-	return declare("dojox/app/tests/mediaQuery3ColumnApp/controllers/CssLayout", LayoutBase, {
+	return declare("dapp-tests/mediaQuery3ColumnApp/controllers/CssLayout", LayoutBase, {
 
 		constructor: function(app, events){
 			// summary:
 			//		bind "app-initLayout" and "app-layoutView" events on application instance.
 			//
 			// app:
-			//		dojox/app application instance.
+			//		dapp application instance.
 			// events:
 			//		{event : handler}
 		},
 
 		initLayout: function(event){
 			// summary:
-			//		Response to dojox/app "app-initLayout" event which is setup in LayoutBase.
+			//		Response to dapp "app-initLayout" event which is setup in LayoutBase.
 			//		The initLayout event is called once when the View is being created the first time.
 			//
 			// example:

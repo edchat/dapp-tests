@@ -4,9 +4,14 @@
 	"description": "A modelApp",
 	"splash": "splash",
 
+	"loaderConfig": {
+		"paths": {
+			"modelApp": "../dapp-tests/modelApp"
+		}
+	},
+
 	"dependencies": [
-		"dojox/app/utils/simpleModel",
-		"dojo/store/Observable",		
+		"dojo/store/Observable",
 		"dojox/mobile/_base",
 		"dojox/mobile/compat",
 		"dojox/mobile/TabBar",
@@ -27,14 +32,14 @@
 	// of the application, how it processes the config or any other life cycle
 	// by creating and including one or more of these
 	"modules": [
-		//"dojox/app/module/env",
-		//"dojox/app/module/lifecycle"
+		//"dapp/module/env",
+		//"dapp/module/lifecycle"
 	],
 	
 	"controllers": [
-		"dojox/app/controllers/Load",
-		"dojox/app/controllers/Transition",
-		"dojox/app/controllers/Layout"
+		"dapp/controllers/Load",
+		"dapp/controllers/Transition",
+		"dapp/controllers/Layout"
 	],
 
 	//stores we are using 
@@ -53,12 +58,12 @@
 	"has" : {
 		"ie9orLess" : {
 			"controllers": [
-				"dojox/app/controllers/HistoryHash"
+				"dapp/controllers/HistoryHash"
 			]
 		},
 		"!ie9orLess" : {
 			"controllers": [
-				"dojox/app/controllers/History"
+				"dapp/controllers/History"
 			]
 		}
 	},	
@@ -72,7 +77,7 @@
 
 		"home": { 
 			"dependencies":["dojox/mobile/ListItem","dojox/mobile/RoundRectList","dojox/mobile/RoundRectCategory","dojox/mobile/Heading"],
-			"template": "./main/main.html"
+			"template": "modelApp/main/main.html"
 		},
 
 		//list view, include list view and details view
@@ -82,13 +87,13 @@
 
 			"views": {
 				"list":{
-					"controller" : "./list/list.js",
-					"template": "./list/list.html",
+					"controller" : "modelApp/list/list.js",
+					"template": "modelApp/list/list.html",
 					"dependencies":["dojox/mobile/TextBox"]
 				},
 				"itemDetails":{
-					"controller" : "./list/itemDetails.js",
-					"template": "./list/itemDetails.html",
+					"controller" : "modelApp/list/itemDetails.js",
+					"template": "modelApp/list/itemDetails.html",
 					"dependencies":["dojox/mobile/TextBox"],
 					"defaultParams": {"cursor":"2"}
 				}
@@ -104,22 +109,14 @@
 		  		 	}
 		  		 }
 	   		},
-            "models": {
-				"names": {
-					"modelLoader": "dojox/app/utils/simpleModel",
-					"params":{
-						"store": {"$ref":"#views.simple.stores.namesStore"}
-					}
-				}
-			},
-			"controller" : "./simple/simple.js",
-			"template": "./simple/simple.html",
+			"controller" : "modelApp/simple/simple.js",
+			"template": "modelApp/simple/simple.html",
 			"dependencies":["dojox/mobile/TextBox"]
 		},
 
 		"date": {
-            "controller": "./date/date.js",
-            "template": "./date/date.html",
+            "controller": "modelApp/date/date.js",
+            "template": "modelApp/date/date.html",
             "dependencies":["dojox/mobile/TextBox", "dojox/mobile/TextArea"]
 		}
 	}	

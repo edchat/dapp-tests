@@ -17,9 +17,9 @@
 	// Array of AMD modules identifiers. Controllers for the application. All the controllers defined here will be 
 	// loaded during application startup to respond to application events and controller the application logic. 
 	"controllers": [
-		"dojox/app/controllers/Load",
-		"dojox/app/controllers/Transition",
-		"dojox/app/controllers/Layout"
+		"dapp/controllers/Load",
+		"dapp/controllers/Transition",
+		"dapp/controllers/Layout"
 	],	
 
 	// The has section will include the sections for which the has checks are true.  
@@ -27,12 +27,12 @@
 	"has" : {
 		"ie9orLess" : {
 			"controllers": [
-				"dojox/app/controllers/HistoryHash"
+				"dapp/controllers/HistoryHash"
 			]
 		},
 		"!ie9orLess" : {
 			"controllers": [
-				"dojox/app/controllers/History"
+				"dapp/controllers/History"
 			]
 		}
 	},	

@@ -22,7 +22,7 @@
 		"dojox/mobile/LongListMixin",
 		"dojox/mobile/TabBar",
 		"dojox/mobile/TabBarButton",
-		"dojox/app/widgets/Container",
+		"dapp/widgets/Container",
 		"dojo/store/Memory",
 		"dojo/store/Observable",
 		"dojox/mobile/ScrollableView"
@@ -36,9 +36,9 @@
 	],
 
 	"controllers": [
-		"dojox/app/controllers/Load",
-		"dojox/app/controllers/Transition",
-		"dojox/app/controllers/Layout"
+		"dapp/controllers/Load",
+		"dapp/controllers/Transition",
+		"dapp/controllers/Layout"
 	],
 
 	//stores we are using
@@ -63,12 +63,12 @@
 		},
 		"ie9orLess" : {
 			"controllers": [
-				"dojox/app/controllers/HistoryHash"
+				"dapp/controllers/HistoryHash"
 			]
 		},
 		"!ie9orLess" : {
 			"controllers": [
-				"dojox/app/controllers/History"
+				"dapp/controllers/History"
 			]
 		}
 	},	
