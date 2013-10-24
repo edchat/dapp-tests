@@ -26,6 +26,9 @@
 		"dojo/store/Memory",
 		"dojo/store/Observable",
 		"dojox/mobile/ScrollableView"
+		,"dojox/mobile/Carousel"
+		,"dojox/mobile/SwapView"
+		,"dojox/mobile/CarouselItem"
 	],
 	// Modules for the application.  They are basically used as the second
 	// array of mixins in a dojo.declare().  Modify the top level behavior
@@ -39,6 +42,7 @@
 		"dapp/controllers/Load",
 		"dapp/controllers/Transition",
 		"dapp/controllers/Layout"
+		,"nestedTestApp/controllers/CustomLogger"
 	],
 
 	//stores we are using
@@ -59,9 +63,12 @@
 		"!phone" : {
 			"template": "nestedTestApp/views/tablet/ViewScrollableLists.html",
 			"controller": "nestedTestApp/views/tablet/ViewScrollableLists",
-		//	"defaultView": "P1,S1,V1"
+		//	"defaultView": "P1,S1,V1+P1,S1,V8"
+		//	"defaultView": "P1,S1,V8"
+		//	"defaultView": "P1"
 			"defaultView": "V2"
-		//	"defaultView": "P2,S2,Ss2,V5+P2,S2,Ss2,V6"
+		//	"defaultView": "P2,S2,Ss2"
+		//	"defaultView": "P2,S2,Ss2+P2,S2,Ss2,V6"
 		},
 		"ie9orLess" : {
 			"controllers": [
@@ -77,8 +84,15 @@
 
 	// these are the possible transitions, 
 	// if a transition is set on a view or parent it will override the transition set on the transitionEvent or the defaultTransition in the config.
-	"transition": "slide",
-	"logTransitions": 1,
+	"defaultTransition": "slide",
+
+	"appLogging": {
+		"logAll": 0,
+		"logTimeStamp": 0,
+		"loggingList": [
+			"logTransitions:"
+		]
+	},
 	"timedAutoFlow": 1,
 	"timed100Loops": 0,
 
@@ -96,24 +110,29 @@
 			}
 		},
 		"P1": {
+			"defaultTransition": "slide",
 			"controller": "nestedTestApp/views/P1.js",
 			"template": "nestedTestApp/views/P1.html",
+			"defaultView": "S1",
 			"views": {
 				"S1": {
 					"template": "nestedTestApp/views/S1.html",
 					"controller": "nestedTestApp/views/S1.js",
-					"defaultView": "V1",
+					//"defaultView": "V8",
+					"defaultView": "V1+V8",
+					"transition": "none",
 					"views": {
 						"TestInfo": {
-							"transition": "none",
 							"template": "nestedTestApp/views/TestInfo.html",
 							"controller": "nestedTestApp/views/TestInfo.js"
 						},
 						"V1": {
+							"transition": "slide",
 							"template": "nestedTestApp/views/V1.html",
 							"controller": "nestedTestApp/views/V1.js"
 						},
 						"V3": {
+							"transition": "none",
 							"template": "nestedTestApp/views/V3.html",
 							"controller": "nestedTestApp/views/V3.js"
 						},
@@ -127,19 +146,22 @@
 			}
 		},
 		"V2": {
+			"defaultTransition": "fade",
 			"controller": "nestedTestApp/views/V2.js",
 			"template": "nestedTestApp/views/V2.html"
 		},
 		"V4": {
+			"transition": "flip",
 			"controller": "nestedTestApp/views/V4.js",
 			"template": "nestedTestApp/views/V4.html"
 		},
 		"P2": {
+			"defaultTransition": "slide",
 			"views": {
 				"S2": {
 					"views": {
 						"Ss2": {
-							"defaultView": "V5",
+							"defaultView": "V5+V6",
 							"views": {
 								"V5": {
 									"controller": "nestedTestApp/views/V5.js",
