@@ -68,6 +68,8 @@
 
 	//"transition": "flip",  //fade may have a problem     
 
+	"logTransitions": 1,
+
 	"views": {
 		"navLeft":{
 			"constraint" : "left",

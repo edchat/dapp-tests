@@ -1,0 +1,183 @@
+{
+	"id": "TestApp",
+	"name": "Scrollable Test App",
+	"description": "This is a test app for scrollable lists.",
+	"splash": "splash",
+
+	"loaderConfig": {
+		"paths": {
+			"unloadViewTestApp": "../dapp-tests/unloadViewTestApp"
+		}
+	},
+
+	"dependencies": [
+		"dojox/mobile/_base",
+		"dojox/mobile/_compat",
+		"dojox/mobile/Button",
+		"dojox/mobile/Heading",
+		"dojox/mobile/ListItem",
+		"dojox/mobile/RoundRectList",
+		"dojox/mobile/RoundRectCategory",
+		"dojox/mobile/EdgeToEdgeStoreList",
+		"dojox/mobile/LongListMixin",
+		"dojox/mobile/TabBar",
+		"dojox/mobile/TabBarButton",
+		"dapp/widgets/Container",
+		"dojo/store/Memory",
+		"dojo/store/Observable",
+		"dojox/mobile/ScrollableView"
+	],
+	// Modules for the application.  They are basically used as the second
+	// array of mixins in a dojo.declare().  Modify the top level behavior
+	// of the application, how it processes the config or any other life cycle
+	// by creating and including one or more of these
+	"modules": [
+		"unloadViewTestApp/unloadViewTestApp"
+	],
+
+	"controllers": [
+		"dapp/controllers/Load",
+		"dapp/controllers/Transition",
+		"dapp/controllers/Layout"
+		,"unloadViewTestApp/controllers/CustomLogger"
+	],
+
+	//stores we are using
+	"stores": {
+		"longlistStore":{
+	       "type": "dojo/store/Memory",
+	       "observable": true,
+		   "params": {
+                "data": "modelApp.list"
+		   }
+		}	   
+	},
+	
+	"has" : {
+		"phone" : {
+			"defaultView": "P1,S1,V1"
+		},
+		"!phone" : {
+			"template": "unloadViewTestApp/views/tablet/ViewScrollableLists.html",
+			"controller": "unloadViewTestApp/views/tablet/ViewScrollableLists",
+		//	"defaultView": "P1,S1,V1"
+			"defaultView": "V2"
+		//	"defaultView": "P2,S2,Ss2,V5+P2,S2,Ss2,V6"
+		},
+		"ie9orLess" : {
+			"controllers": [
+				"dapp/controllers/HistoryHash"
+			]
+		},
+		"!ie9orLess" : {
+			"controllers": [
+				"dapp/controllers/History"
+			]
+		}
+	},	
+
+	// these are the possible transitions, 
+	// if a transition is set on a view or parent it will override the transition set on the transitionEvent or the defaultTransition in the config.
+	"defaultTransition": "slide",
+
+	"autoUnloadCount" : 1,
+	"appLogging": {
+		"logAll": 0,
+		"logTimeStamp": 0,
+		"loggingList": [
+			"logTransitions:"
+			,"logLoadViews:"
+		]
+	},
+	"timedAutoFlow": 1,
+	"timed100Loops": 0,
+
+	//views are groups of views and models loaded at once
+	"views": {
+		"configuration": {
+			"defaultView": "Nav1",
+			"transition": "slide",
+
+			"views": {
+				"Nav1": {
+					"controller": "unloadViewTestApp/views/configuration/Nav1.js",
+					"template": "unloadViewTestApp/views/configuration/Nav1.html"
+				}
+			}
+		},
+		"P1": {
+			"defaultTransition": "slide",
+			"controller": "unloadViewTestApp/views/P1.js",
+			"template": "unloadViewTestApp/views/P1.html",
+		//	"alwaysAutoUnload" : true,
+			"views": {
+				"S1": {
+					"template": "unloadViewTestApp/views/S1.html",
+					"controller": "unloadViewTestApp/views/S1.js",
+				//	"alwaysAutoUnload" : true,
+				//	"autoUnloadCount" : 2,
+				//	"defaultView": "V1+V8",
+					"defaultView": "V1",
+					"views": {
+						"TestInfo": {
+							"template": "unloadViewTestApp/views/TestInfo.html",
+							"controller": "unloadViewTestApp/views/TestInfo.js"
+						},
+						"V1": {
+							"transition": "flip",
+							"template": "unloadViewTestApp/views/V1.html",
+						//	"alwaysAutoUnload" : true,
+							"controller": "unloadViewTestApp/views/V1.js"
+						},
+						"V3": {
+							"transition": "none",
+							"template": "unloadViewTestApp/views/V3.html",
+						//	"alwaysAutoUnload" : true,
+							"controller": "unloadViewTestApp/views/V3.js"
+						},
+						"V8": {
+							"constraint" : "right",
+							"controller": "unloadViewTestApp/views/V8.js",
+							"template": "unloadViewTestApp/views/V8.html"
+						}
+					}
+				}
+			}
+		},
+		"V2": {
+			"defaultTransition": "fade",
+			"controller": "unloadViewTestApp/views/V2.js",
+		//	"alwaysAutoUnload" : true,
+			"template": "unloadViewTestApp/views/V2.html"
+		},
+		"V4": {
+			"transition": "flip",
+			"controller": "unloadViewTestApp/views/V4.js",
+			"template": "unloadViewTestApp/views/V4.html"
+		},
+		"P2": {
+			"defaultTransition": "slide",
+			"views": {
+				"S2": {
+					"views": {
+						"Ss2": {
+							"defaultView": "V5",
+							"views": {
+								"V5": {
+									"controller": "unloadViewTestApp/views/V5.js",
+									"template": "unloadViewTestApp/views/V5.html",
+									"constraint" : "center"
+								},
+								"V6": {
+									"constraint" : "right",
+									"controller": "unloadViewTestApp/views/V6.js",
+									"template": "unloadViewTestApp/views/V6.html"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

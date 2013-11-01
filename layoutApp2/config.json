@@ -32,8 +32,8 @@
 	"controllers": [
 		"dapp/controllers/Load",
 		"dapp/controllers/Transition",
-		"dapp/controllers/Layout",
-		"dapp-tests/layoutApp2/controllers/UnloadViewController"
+		"dapp/controllers/Layout"//,
+		//"dapp-tests/layoutApp2/controllers/UnloadViewController"
 	],
 
 	//stores we are using
@@ -43,13 +43,13 @@
 		   "params": {
 		      "data": "modelApp.names"
 		   }
-		},
-		"listStore":{
-			"type": "dojo/store/Memory",
-			"observable": true,
-			"params": {
-				"data": "modelApp.listData"
-			}
+	//	},
+	//	"listStore":{
+	//		"type": "dojo/store/Memory",
+	//		"observable": true,
+	//		"params": {
+	//			"data": "modelApp.listData"
+	//		}
        }
 	},
 
@@ -72,13 +72,23 @@
 //	"template": "layoutApp2/views/navigation.html",
 
 	//the name of the view to load when the app is initialized.
-	"defaultView": "navigation+simple",
+//	"defaultView": "navigation+simple",
+	"defaultView": "navigation+date",
 
 	// these are the possilbe defaultTransitions
 	//"defaultTransition": "slide",
 	//"defaultTransition": "none",
 	//"defaultTransition": "fade",
 	"defaultTransition": "fade",
+
+	"autoUnloadCount" : 1,
+	"appLogging": {
+		"logAll": 0,
+		"logTimeStamp": 0,
+		"loggingList": [
+			"logLoadViews:"
+		]
+	},
 
 	"views": {
 		"navigation":{
@@ -88,6 +98,8 @@
 		"simple":{
 			"controller" : "layoutApp2/views/simple.js",
 			"constraint" : "center",
+		//	"alwaysAutoUnload" : false,
+		//	"alwaysAutoUnload" : true,
 			"template": "layoutApp2/views/simple.html",
 			"dependencies":["dojox/mobile/TextBox"]
 		},
@@ -95,8 +107,19 @@
 		//list view, include list view and details view
 		"listMain": {
 			"defaultView": "list",
+		//	"neverAutoUnload" : true,
+		//	"alwaysAutoUnload" : true,
 			"transition": "flip",
 			"constraint" : "center",
+			"stores": {
+				"listStore":{
+					"type": "dojo/store/Memory",
+					"observable": true,
+					"params": {
+						"data": "modelApp.listData"
+					}
+		       }
+			},
 
 			"views": {
 				"list":{
@@ -116,6 +139,7 @@
 		"date": {
             "controller": "layoutApp2/views/date.js",
             "template": "layoutApp2/views/date.html",
+		//	"alwaysAutoUnload" : true,
             "constraint" : "center",
             "dependencies":["dojox/mobile/DatePicker", "dojox/mobile/Opener"]
 		}

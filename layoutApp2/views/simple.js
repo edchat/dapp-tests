@@ -1,5 +1,5 @@
-define(["dojo/dom", "dojo/_base/connect", "dijit/registry"],
-function(dom, connect, registry){
+define(["dojo/dom", "dojo/_base/connect", "dijit/registry", "dojo/dom-construct"],
+function(dom, connect, registry, domConstruct){
 
 	var _connectResults = []; // events connect results
 	var currentModel = null;
@@ -51,13 +51,21 @@ function(dom, connect, registry){
 			
 		},
 
+		afterActivate: function(){
+			console.log(" simple.js afterActivate registry.length = ["+registry.length+"] for view =["+this.id+"]");
+
+		},
+
 		// view destroy
 		destroy: function(){
+			console.log("in simple.js destroy called");
 			var connectResult = _connectResults.pop();
 			while(connectResult){
 				connect.disconnect(connectResult);
 				connectResult = _connectResults.pop();
 			}
+			domConstruct.destroy(this.domNode);
+			delete this.domNode;
 		}
 	};
 });

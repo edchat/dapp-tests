@@ -23,32 +23,53 @@ function(lang, on, registry, stamp){
 			})); 
 			_onResults.push(onResult);
 
-			onResult = on(this.unloadSimple, "click", lang.hitch(this, function(e){
+		//	onResult = on(this.unloadSimple, "click", lang.hitch(this, function(e){
+				//test app.unloadView call
+			//	var view = this.parent.children.layoutApp2_simple;
+		//		this.app.unloadView(this.parent.children.layoutApp2_simple, this.unloadCallback);
+			//	view = null;
+			/*
 				var params = {};
 				params.parent = this.parent;
 				var view = this.parent.children.layoutApp2_simple;
 				params.view = view;
 			//	params.viewId = view.id;
-				this.app.emit("unload-view", params);
-			}));
-			_onResults.push(onResult);
+				this.app.emit("app-unload-view", params);
+				*/
+		//	}));
+		//	_onResults.push(onResult);
 
-			onResult = on(this.unloadList, "click", lang.hitch(this, function(e){
+		//	onResult = on(this.unloadList, "click", lang.hitch(this, function(e){
+			//	var view = this.parent.children.layoutApp2_listMain;
+		//		this.app.unloadView(this.parent.children.layoutApp2_listMain, this.unloadCallback);
+			//	view = null;
+			/*
 				var params = {};
 				params.parent = this.parent;
 				var view = this.parent.children.layoutApp2_listMain;
 				params.view = view;
 				//params.viewId = view.id;
-				this.app.emit("unload-view", params);
-			}));
-			_onResults.push(onResult);
+				this.app.emit("app-unload-view", params);
+				*/
+		//	}));
+		//	_onResults.push(onResult);
 
 			// initialize the global Date variable as today
 			date = stamp.toISOString(new Date(), {selector: "date"});
 		},
 
+		unloadCallback: function(){
+			console.log("date.js unloadCallback called unloaded this.view.id="+this.view.id);
+			this.view = null;
+		},
+
 		beforeActivate: function(){
 			//console.log("date view beforeActivate()");
+		},
+
+		afterActivate: function(){
+			console.log(" date.js afterActivate registry.length = ["+registry.length+"] for view =["+this.id+"]");
+
 		},
 
 

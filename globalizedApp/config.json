@@ -39,6 +39,8 @@
 		
 	"defaultView": "home",
 
+	"logTransitions": 1,
+
 	"views": {
 		"home": {
 			"template": "globalizedApp/home.html",

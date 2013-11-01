@@ -1,4 +1,4 @@
-define(["dojo/_base/lang", "dojo/on"], function(lang, on){
+define(["dojo/_base/lang", "dojo/on", "dijit/registry", "dojo/dom-construct"], function(lang, on, registry, domConstruct){
 	var _onResults = []; // events on array
 
 	return {
@@ -70,10 +70,19 @@ define(["dojo/_base/lang", "dojo/on"], function(lang, on){
 			
 		},
 
+		afterActivate: function(){
+			console.log(" list.js afterActivate registry.length = ["+registry.length+"] for view =["+this.id+"]");
+
+		},
+
 		// view destroy, this destroy function can be removed since it is empty
 		destroy: function(){
 			// _WidgetBase.on listener is automatically destroyed when the Widget itself is. 
-			console.log("layoutApp2 list view destroy called");
+			console.log("layoutApp2 list view destroy called this.list.store.data.length ="+this.list.store.data.length);
+			domConstruct.destroy(this.domNode);
+			delete this.domNode;
+		//	delete this.loadedStores.listStore;
+		//	delete this.list.store;
 		}
 	};
 });

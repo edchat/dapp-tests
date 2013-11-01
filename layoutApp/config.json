@@ -42,13 +42,6 @@
 			"params": {
 				"data": "modelApp.names"
 			}
-		},
-		"listStore":{
-			"type": "dojo/store/Memory",
-			"observable": true,
-			"params": {
-				"data": "modelApp.listData"
-			}
 		}
 	},
 
@@ -86,10 +79,20 @@
 	//"transition": "fade",
 	"defaultTransition": "flip",
 
+	"autoUnloadCount" : 2,
+	"appLogging": {
+		"logAll": 0,
+		"logTimeStamp": 0,
+		"loggingList": [
+			"logLoadViews:"
+		]
+	},
+
 	"views": {
 		"simple":{
 			"controller" : "layoutApp/views/simple.js",
 			"template": "layoutApp/views/simple.html",
+		//	"alwaysAutoUnload" : true,
 			"dependencies":["dojox/mobile/TextBox"]
 		},
 
@@ -97,6 +100,15 @@
 		"listMain": {
 			"defaultView": "list",
 			"defaultTransition": "fade",
+			"stores": {
+				"listStore":{
+					"type": "dojo/store/Memory",
+					"observable": true,
+					"params": {
+						"data": "modelApp.listData"
+					}
+				}
+			},
 
 			"views": {
 				"list":{
@@ -118,6 +130,7 @@
 		"date": {
             "controller": "layoutApp/views/date.js",
             "template": "layoutApp/views/date.html",
+			"alwaysAutoUnload" : true,
             "dependencies":["dojox/mobile/DatePicker", "dojox/mobile/Opener", "dojox/mobile/SpinWheelDatePicker"]
 		}
 	}	
