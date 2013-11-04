@@ -1,7 +1,7 @@
 {
 	"id": "TestApp",
-	"name": "Scrollable Test App",
-	"description": "This is a test app for scrollable lists.",
+	"name": "Unload Test App",
+	"description": "This is a test app to test unloading views.",
 	"splash": "splash",
 
 	"loaderConfig": {
@@ -80,7 +80,6 @@
 	// if a transition is set on a view or parent it will override the transition set on the transitionEvent or the defaultTransition in the config.
 	"defaultTransition": "slide",
 
-	"autoUnloadCount" : 1,
 	"appLogging": {
 		"logAll": 0,
 		"logTimeStamp": 0,
@@ -91,6 +90,8 @@
 	},
 	"timedAutoFlow": 1,
 	"timed100Loops": 0,
+
+	//"autoUnloadCount" : 1,
 
 	//views are groups of views and models loaded at once
 	"views": {
@@ -109,12 +110,11 @@
 			"defaultTransition": "slide",
 			"controller": "unloadViewTestApp/views/P1.js",
 			"template": "unloadViewTestApp/views/P1.html",
-		//	"alwaysAutoUnload" : true,
+			"alwaysAutoUnload" : true,
 			"views": {
 				"S1": {
 					"template": "unloadViewTestApp/views/S1.html",
 					"controller": "unloadViewTestApp/views/S1.js",
-				//	"alwaysAutoUnload" : true,
 				//	"autoUnloadCount" : 2,
 				//	"defaultView": "V1+V8",
 					"defaultView": "V1",
@@ -126,13 +126,11 @@
 						"V1": {
 							"transition": "flip",
 							"template": "unloadViewTestApp/views/V1.html",
-						//	"alwaysAutoUnload" : true,
 							"controller": "unloadViewTestApp/views/V1.js"
 						},
 						"V3": {
 							"transition": "none",
 							"template": "unloadViewTestApp/views/V3.html",
-						//	"alwaysAutoUnload" : true,
 							"controller": "unloadViewTestApp/views/V3.js"
 						},
 						"V8": {
@@ -147,15 +145,17 @@
 		"V2": {
 			"defaultTransition": "fade",
 			"controller": "unloadViewTestApp/views/V2.js",
-		//	"alwaysAutoUnload" : true,
+			"alwaysAutoUnload" : true,
 			"template": "unloadViewTestApp/views/V2.html"
 		},
 		"V4": {
+			"alwaysAutoUnload" : true,
 			"transition": "flip",
 			"controller": "unloadViewTestApp/views/V4.js",
 			"template": "unloadViewTestApp/views/V4.html"
 		},
 		"P2": {
+			"alwaysAutoUnload" : true,
 			"defaultTransition": "slide",
 			"views": {
 				"S2": {
