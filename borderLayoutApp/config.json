@@ -88,7 +88,7 @@
 	//"defaultView": "view9+view1+view7+view3+view5", 
 	"defaultView": "view2+view10+view4+view8+view6", 
 	
-	"autoUnloadCount" : 1,
+//	"autoUnloadCount" : 1,
 
 	"views": {
 		"view1":{

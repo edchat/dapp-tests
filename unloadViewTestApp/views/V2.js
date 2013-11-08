@@ -24,7 +24,7 @@ function(dom, domStyle, connect, registry, has, TransitionEvent){
 			app.listStart += app.listCount;
 			app.listTotal = app.listStart-1;
 			return false;
-		}, 500);
+		}, 50);
 	};
 	return {
 		init: function(){
@@ -65,8 +65,11 @@ function(dom, domStyle, connect, registry, has, TransitionEvent){
 			}
 			if(!this.app.loopCount){
 				this.app.loopCount = 0;
-				console.log("V2:afterActivate loopCount = 0 start timer");
-				console.time("timing transition loop");
+			//	console.log("V2:afterActivate loopCount = 0 start timer");
+			//	console.time("timing transition loop");
+				for(var i = 0; i < 20; i++){
+					loadMore();
+				}
 			}
 			this.app.loopCount++;
 			//console.log(MODULE+" afterActivate this.app.loopCount="+this.app.loopCount);

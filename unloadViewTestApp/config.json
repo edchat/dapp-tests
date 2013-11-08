@@ -36,9 +36,11 @@
 	],
 
 	"controllers": [
-		"dapp/controllers/Load",
 		"dapp/controllers/Transition",
-		"dapp/controllers/Layout"
+		"dapp/controllers/Layout",
+		"dapp/controllers/Load"
+	//	,"unloadViewTestApp/controllers/CustomTransition"
+	//	,"unloadViewTestApp/controllers/CustomLayout"
 		,"unloadViewTestApp/controllers/CustomLogger"
 	],
 
@@ -115,6 +117,7 @@
 				"S1": {
 					"template": "unloadViewTestApp/views/S1.html",
 					"controller": "unloadViewTestApp/views/S1.js",
+				//	"alwaysAutoUnload" : true,
 				//	"autoUnloadCount" : 2,
 				//	"defaultView": "V1+V8",
 					"defaultView": "V1",
