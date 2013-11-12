@@ -79,10 +79,10 @@
 									t.assertEqual(4, config.controllers.length);
 									if(has("ie")){
 										t.assertEqual(config.controllers[3], "dapp/controllers/HistoryHash");
-										t.assertTrue(testApp.controllers[3] instanceof HistoryHash);
+										t.assertTrue(testApp.loadedControllers[3] instanceof HistoryHash);
 									}else{
 										t.assertEqual(config.controllers[3], "dapp/controllers/History");
-										t.assertTrue(testApp.controllers[3] instanceof History);
+										t.assertTrue(testApp.loadedControllers[3] instanceof History);
 									}
 									return dfd.callback(true);
 								}, 500);

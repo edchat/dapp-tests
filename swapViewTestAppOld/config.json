@@ -1,7 +1,7 @@
 {
 	"id": "swapViewTestApp",
-	"name": "layout App2",
-	"description": "A layout App2",
+	"name": "Layout By Div Id App",
+	"description": "A Layout test App using a custom layout controller which uses div ids for the layout.",
 	"splash": "splash",
 
 	"loaderConfig": {
@@ -11,15 +11,14 @@
 	},
 
 	"dependencies": [
-	//	"dapp/utils/simpleModel",
 		"dojox/mobile/_base",
-
+		
 		"dojox/mobile/FixedSplitter",
 		"dojox/mobile/Pane",
 		"dojox/mobile/Container",
 		"dojox/mobile/SwapView",
-		"dojox/mobile/PageIndicator",
-
+		"dojox/mobile/PageIndicator",		
+		
 		"dojox/mobile/compat",
 		"dojox/mobile/TabBar",
 		"dojox/mobile/RoundRect",
@@ -29,8 +28,6 @@
 		"dojox/mobile/Heading",
 		"dojox/mobile/ScrollableView",
 		"dojo/store/Memory",
-		"dojo/store/Observable",		
-		"dojox/mobile/EdgeToEdgeStoreList",
 		"dojox/mobile/View",
 		"dapp/widgets/Container"
 	],
@@ -40,8 +37,7 @@
 	"controllers": [
 		"dapp/controllers/Load",
 		"dapp/controllers/Transition",
-	//	"dapp/controllers/Layout",
-		"dapp-tests/swapViewTestApp/controllers/DivIdBasedLayout"
+		"dapp/tests/swapViewTestApp/controllers/DivIdBasedLayout"
 	],
 
 	//stores we are using
@@ -51,17 +47,16 @@
 		   "params": {
 		      "data": "modelApp.names"
 		   }
-	//	},
-	//	"listStore":{
-	//		"type": "dojo/store/Memory",
-	//		"observable": true,
-	//		"params": {
-	//			"data": "modelApp.listData"
-	//		}
+	   },
+       "repeatStore":{
+           "type": "dojo/store/Memory",
+           "params": {
+                "data": "modelApp.repeatData"
+           }
        }
 	},
 
-	// The has section will include the sections for which the has checks are true.  
+	// The has section will include the sections for which the has checks are true.
 	// For the sections with ! it will include the section if the has check is not true.
 	"has" : {
 		"ie9orLess" : {
@@ -76,30 +71,26 @@
 		}
 	},	
 
-// this app uses constraints and multiple files in defaultView instead of an outer template for a table layout
-//	"template": "swapViewTestApp/views/navigation.html",
 
 	//the name of the view to load when the app is initialized.
-//	"defaultView": "navigation+simple",
-	//"defaultView": "navigation+date",
-	"defaultView": "header+TestInfo+simple+listMain+navigation",
+	//"defaultView": "header+navigation+TestInfo",
+	//"defaultView": "main+header+TestInfo+simple+repeatList+navigation",
+	"defaultView": "header+TestInfo+simple+repeatList+navigation",
+	
+
 	// these are the possilbe defaultTransitions
 	"defaultTransition": "slide",
 	//"defaultTransition": "none",
 	//"defaultTransition": "fade",
-	//"defaultTransition": "flip",
+	//"defaultTransition": "flip",     
 	"template": "swapViewTestApp/views/main.html",
 
-	"autoUnloadCount" : 1,
-	"appLogging": {
-		"logAll": 0,
-		"logTimeStamp": 0,
-		"loggingList": [
-			"logLoadViews:"
-		]
-	},
-
 	"views": {
+	//	"main": {
+	//		"controller" : "swapViewTestApp/views/main.js",
+	//		"constraint" : "center",
+	//		"template": "swapViewTestApp/views/main.html"
+	//	},
 		"navigation":{
 			"controller" : "swapViewTestApp/views/navigation.js",
 			"constraint" : "nav1Id",
@@ -109,7 +100,7 @@
 			"controller" : "swapViewTestApp/views/TestInfo.js",
 			"constraint" : "swapView1Id",
 			"template": "swapViewTestApp/views/TestInfo.html"
-		},
+		},	
 		"header":{
 			"constraint" : "heading1Id",
 			"template": "swapViewTestApp/views/header.html"
@@ -121,44 +112,17 @@
 			"dependencies":["dojox/mobile/TextBox"]
 		},
 
-		//list view, include list view and details view
-		"listMain": {
-			"defaultView": "list",
-		//	"neverAutoUnload" : true,
-		//	"alwaysAutoUnload" : true,
-		//	"transition": "flip",
+		"repeatList":{
+			"controller" : "swapViewTestApp/views/repeat.js",
 			"constraint" : "swapView3Id",
-			"stores": {
-				"listStore":{
-					"type": "dojo/store/Memory",
-					"observable": true,
-					"params": {
-						"data": "modelApp.listData"
-					}
-		       }
-			},
-
-			"views": {
-				"list":{
-					"controller" : "swapViewTestApp/views/list.js",
-					"template": "swapViewTestApp/views/list.html",
-					"dependencies":["dojox/mobile/TextBox"]
-				},
-				"itemDetails":{
-					"controller" : "swapViewTestApp/views/itemDetails.js",
-					"template": "swapViewTestApp/views/itemDetails.html",
-					"dependencies":["dojox/mobile/TextBox"],
-					"defaultParams": {"cursor":"2"}
-				}
-			}
+			"template": "swapViewTestApp/views/repeat.html",
+			"dependencies":["dojox/mobile/TextBox"]
 		},
-
-		"date": {
-            "controller": "swapViewTestApp/views/date.js",
-            "template": "swapViewTestApp/views/date.html",
-		//	"alwaysAutoUnload" : true,
-            "constraint" : "swapView4Id",
-            "dependencies":["dojox/mobile/DatePicker", "dojox/mobile/Opener"]
+		"repeatDetails":{
+			"controller" : "swapViewTestApp/views/repeatDetails.js",
+			"constraint" : "swapView3Id",
+			"template": "swapViewTestApp/views/repeatDetails.html",
+			"dependencies":["dojox/mobile/TextBox"]
 		}
 	}	
 }

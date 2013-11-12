@@ -29,7 +29,7 @@
 		"dojox/mobile/Container",
 		"dojo/data/ItemFileWriteStore",
 		"dojo/store/DataStore",
-		"dapp/utils/mvcModel",
+	//	"dapp/utils/mvcModel",
 		"dojox/mvc/EditStoreRefListController",
 		"dojox/mvc/Repeat",
 		"dojox/mvc/WidgetList",
@@ -74,7 +74,7 @@
 	// simple model must be loaded. The type property defines which class must be used for that model using
 	// an AMD module identifier and finally the params property content is passed to the model class 
 	// constructor to build an instance.
-	"models": {
+	//"models": {
    //    "repeatmodels": {
    //    					"modelLoader": "dapp/utils/mvcModel",
 	//				"type": "dojox/mvc/EditStoreRefListController",

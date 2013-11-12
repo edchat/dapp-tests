@@ -55,11 +55,11 @@
 										var dfd = new doh.Deferred();
 										setTimeout(function() {
 											// test controllers
-											t.assertEqual(4, testApp.controllers.length);
-											t.assertTrue(testApp.controllers[0] instanceof Load);
-											t.assertTrue(testApp.controllers[1] instanceof Transition);
-											t.assertTrue(testApp.controllers[2] instanceof Layout);
-											t.assertTrue(testApp.controllers[3] instanceof History);
+											t.assertEqual(4, testApp.loadedControllers.length);
+											t.assertTrue(testApp.loadedControllers[0] instanceof Load);
+											t.assertTrue(testApp.loadedControllers[1] instanceof Transition);
+											t.assertTrue(testApp.loadedControllers[2] instanceof Layout);
+											t.assertTrue(testApp.loadedControllers[3] instanceof History);
 											return dfd.callback(true);
 										}, 500);
 										return dfd;
